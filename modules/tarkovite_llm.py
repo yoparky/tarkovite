@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
 
 # Load the .env file's API Key
 load_dotenv()
@@ -22,7 +23,7 @@ llm = ChatOpenAI(
 messages = [
     (
         "system",
-        "You are a helpful assistant that translates English to French. Translate the user sentence.",
+        "You are a helpful assistant that gives advice and answers questions for players playing the game Escape from Tarkov.",
     ),
     (
         "human", "I'm testing out the api. Do you get my message?!"
