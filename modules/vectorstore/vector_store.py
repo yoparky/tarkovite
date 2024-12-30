@@ -1,8 +1,3 @@
-import os
-from langchain.vectorstores import FAISS
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.schema import Document
-
 class FAISSVectorStore:
     def __init__(self, index_path="tarkov_faiss_index"):
         self.index_path = index_path
@@ -33,3 +28,38 @@ class FAISSVectorStore:
         """
         vectorstore = self.load_vectorstore()
         return vectorstore.similarity_search(query, k=k)
+
+    def add_single_document(self, text):
+        """
+        Add a single document to the FAISS vector store.
+        """
+        document = Document(page_content=text)
+        try:
+            vectorstore = self.load_vectorstore()
+        except ValueError:
+            # If vector store does not exist, create a new one
+            print("No existing vector store found. Creating a new one...")
+            self.build_vectorstore([document])
+            return
+        # Add the document to the existing vector store
+        vectorstore.add_documents([document])
+        vectorstore.save_local(self.index_path)
+        print("Single document added to the FAISS vector store.")
+
+    def add_multiple_documents(self, texts):
+        """
+        Add a list of documents to the FAISS vector store.
+        Each text in the list will be treated as a separate chunk.
+        """
+        documents = [Document(page_content=text) for text in texts]
+        try:
+            vectorstore = self.load_vectorstore()
+        except ValueError:
+            # If vector store does not exist, create a new one
+            print("No existing vector store found. Creating a new one...")
+            self.build_vectorstore(documents)
+            return
+        # Add the documents to the existing vector store
+        vectorstore.add_documents(documents)
+        vectorstore.save_local(self.index_path)
+        print(f"{len(texts)} documents added to the FAISS vector store.")
