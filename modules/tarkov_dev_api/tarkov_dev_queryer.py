@@ -66,6 +66,28 @@ def get_all_item_data():
     """
     return run_query(query)
 
+def get_item_data(item_name):
+    query = f'''
+    {{
+        itemsByName(name: "{item_name}") {{
+            name
+            types
+            avg24hPrice
+            basePrice
+            width
+            height
+            changeLast48hPercent
+            iconLink
+            link
+            sellFor {{
+            price
+            source
+            }}
+        }}
+    }}
+    '''
+    return run_query(query)
+
 def get_server_status():
     query = """
     {
@@ -85,3 +107,6 @@ def get_server_status():
     }
     """
     return run_query(query)
+
+result = get_item_data("m4a1")
+print(result)
