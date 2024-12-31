@@ -108,5 +108,5 @@ def get_server_status():
     """
     return run_query(query)
 
-result = get_item_data("m4a1")
+result = get_item_data("colt")
 print(result)
