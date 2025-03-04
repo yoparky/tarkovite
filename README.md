@@ -1,6 +1,6 @@
-{# Tarkov Helper LLM App
+{# Tarkovite LLM App
 
-The **Tarkov Helper LLM App** is a community tool that uses a **Retrieval-Augmented Generation (RAG)** model with OpenAI's GPT-3.5-turbo and FAISS for vector search. The app allows users to ask questions about *Escape from Tarkov* via a microphone input or text and provides accurate and helpful answers using a curated knowledge base.
+The **Tarkovite LLM App** is a community tool that uses a **Retrieval-Augmented Generation (RAG)** model with OpenAI's GPT-3.5-turbo and FAISS for vector search. The app allows users to ask questions about *Escape from Tarkov* via a microphone input or text and provides accurate and helpful answers using a curated knowledge base.
 
 ---
 
