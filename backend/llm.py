@@ -30,7 +30,6 @@ def generate_answer(question: str, context_docs: list) -> str:
     )
 
     try:
-        # Correct method for OpenAI API v1.0.0 and above
         response = openai.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}],
