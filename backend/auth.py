@@ -1,6 +1,7 @@
 from functools import wraps
 from flask import request, abort
 from config import Config
+# implemented, but auth not used in app
 
 def require_api_key(f):
     """Decorator to require a valid API key for a route."""
