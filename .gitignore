@@ -1,0 +1,74 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Environment variables
+.env
+
+# Flask cache and logs
+instance/
+*.log
+
+# Virtual environment
+venv/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Django stuff:
+*.sqlite3
+
+# mypy
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs (IntelliJ, PyCharm)
+.idea/
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg-info/
+
+# MacOS
+.DS_Store
+
+# Node modules (frontend)
+frontend/node_modules/
+frontend/.env.local
+frontend/.next/
+frontend/out/
+
+# Build directories
+frontend/build/
+frontend/dist/
+frontend/.parcel-cache/
+
+# npm debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# Pytest
+.cache/
